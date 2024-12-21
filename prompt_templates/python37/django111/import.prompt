@@ -1,0 +1,61 @@
+# Prompt for Upgrading Django Imports
+
+## Task:
+Rewrite the `imports` section of the provided `code` file to make it fully compatible with **Django 5.0** and **Python 3.12**.
+
+### Requirements:
+1. **Django Imports:**
+   - Update imports to align with Django 5.0 standards.
+   - Remove deprecated modules and use their recommended replacements.
+   - Update any module paths that have changed between Django 1.11 and Django 5.0.
+
+2. **Python Imports:**
+   - Ensure compatibility with Python 3.12.
+   - Remove deprecated modules or methods, using updated versions where necessary.
+   - Use modern best practices, such as:
+     - `collections.abc` for importing ABCs (e.g., `Iterable`, `Mapping`).
+     - Updated syntax for `importlib`, `pathlib`, etc.
+
+3. **Comment Changes:**
+   - Provide comments for all changes made, explaining what was updated and why.
+
+4. **Remove Legacy Syntax:**
+   - Replace `from __future__ import` statements, as these are unnecessary in Python 3.12.
+   - Update any outdated exception handling or library-specific compatibility layers.
+
+5. **Follow Deprecation Timeline:**
+   - Review the Django and Python deprecation timelines provided below to ensure full compliance.
+
+### Code:
+```python
+<<<code>>>
+```
+
+### Deprecation Notes:
+
+#### **Django Import Deprecations:**
+1. `ugettext_lazy` → `gettext_lazy`.
+2. `django.contrib.postgres.fields.JSONField` → `django.db.models.JSONField`.
+3. `CommaSeparatedIntegerField` has been removed. Use `CharField` with validators instead.
+4. GIS-related imports like `OSMGeoAdmin` have been removed entirely.
+
+#### **Python Import Deprecations:**
+1. `collections.Iterable` and similar have moved to `collections.abc`.
+2. `imp` has been deprecated; use `importlib`.
+3. `asyncio.get_event_loop` should be replaced with `asyncio.run` or `asyncio.get_running_loop`.
+
+### Expected Output:
+1. Save the updated imports to a file named `<<<file_name>>>`.
+2. The content of the file should:
+   - Be fully compatible with Django 5.0 and Python 3.12.
+   - Remove all deprecated or obsolete imports.
+   - Use modern, recommended modules and practices.
+   - Include clear comments explaining the changes.
+
+### Example Output File (`<<<file_name>>>`):
+```python
+# Updated imports for Django 5.0 and Python 3.12
+from django.utils.translation import gettext_lazy as _
+from django.db.models import JSONField, CharField
+
+# Removed deprecated CommaSeparatedIntegerField, replaced with CharField and validators.

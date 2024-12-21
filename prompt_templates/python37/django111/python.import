@@ -1,0 +1,77 @@
+# Prompt for Upgrading Python Code with Django Mix
+
+## Task:
+Review and rewrite the provided **code chunk** from a Python file, which may include Django 1.11 code, to make it fully compatible with **Django 5.0** and **Python 3.12**.
+
+### Requirements:
+1. **Review and Update:**
+   - Analyze the provided code, whether it is a full Python script or a partial chunk, and rewrite it for compatibility with Django 5.0 and Python 3.12.
+   - Update deprecated Django features, methods, or modules to their modern equivalents.
+   - Ensure Python 3.12 compliance by replacing outdated imports, methods, or syntax.
+
+2. **Django-Specific Updates:**
+   - Replace `NullBooleanField` with `BooleanField(null=True)`.
+   - Add the `on_delete` argument to all `ForeignKey` and `OneToOneField` fields.
+   - Update `ugettext_lazy` to `gettext_lazy`.
+   - Remove the `@models.permalink` decorator and replace it with modern alternatives.
+   - Align with `DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'` if applicable.
+
+3. **Python-Specific Updates:**
+   - Replace `collections.Iterable` and similar imports with `collections.abc`.
+   - Migrate deprecated modules like `imp` to `importlib`.
+   - Modernize code by applying updated exception handling and syntax improvements from Python 3.12.
+
+4. **Comment Changes:**
+   - Clearly comment on each update, explaining what was changed and why.
+
+5. **Save Results to File:**
+   - Save the updated code chunk to a file named `updated_python_chunk.py`.
+   - If multiple chunks are processed, save each chunk to separate files or append to the same file as specified.
+
+6. **General Validation:**
+   - Ensure the updated code adheres to Django 5.0 best practices and Python 3.12 standards.
+   - Verify proper formatting for readability and maintainability.
+
+---
+
+## Code:
+Paste your code chunk below. It could be:
+- A full Python file.
+- A Python class or subset of classes.
+- A set of functions or methods.
+
+```python
+<<<code>>>
+```
+
+---
+
+## Deprecation Timeline:
+### Django 5.0:
+1. `NullBooleanField` has been removed. Use `BooleanField(null=True)` instead.
+2. Explicit `on_delete` argument is required for `ForeignKey` and `OneToOneField`.
+3. `ugettext_lazy` → `gettext_lazy`.
+
+### Python 3.12:
+1. Deprecated `collections` imports like `Iterable` must now use `collections.abc`.
+2. `imp` module is fully deprecated; use `importlib` instead.
+
+### Additional Notes:
+- Full deprecation timeline details are provided earlier.
+- Any logic tied to Django or Python should be refactored for compatibility.
+
+---
+
+## Expected Output:
+The rewritten code chunk will:
+1. Be compatible with Django 5.0 and Python 3.12.
+2. Replace deprecated features with their modern equivalents.
+3. Include comments explaining all changes.
+4. Be saved to a file (`<<<file_name>>>`) for easy reference.
+
+---
+
+### Example Workflow:
+1. **Input:** A single Python class, function, or chunk of mixed Django and Python code.
+2. **Process:** Update and comment on changes while ensuring compatibility.
+3. **Output:** Save the updated code to `updated_python_chunk.py`.
